@@ -1,16 +1,24 @@
-let nombre = prompt("Escribe tu nombre");
-let apellido = prompt("Escribe tu apellido");
-let edad = prompt("Edad");
-const dni = parseInt(prompt("DNI sin puntos")); 
+const CANTIDAD_NOTAS = 3;
+let suma=0;
 
-edad = parseInt(edad)
+const alumno = prompt("Ingrese el nombre del alumno");
+for (let i = 1; i <= CANTIDAD_NOTAS; i++) {
+    const nota = number(prompt("Ingresa la nota " + i + " del alumno " + alumno));
+    suma = suma + nota;
 
-alert("Hola " + nombre + " " + apellido + " tu edad es: " + edad + " y tu DNI es: " + dni)  
+if (nota>=6) {
+    console.log("Nota" + i + ":" + nota + " - Aprobado");}
+    else {
+    console.log("Nota" + i + ":" + nota + " - Desaprobado");
+    }    
+}
+const promedio = suma / CANTIDAD_NOTAS;
+console.log("El promedio del alumno " + alumno + " es: " + promedio);
 
-alert("Dentro de 10 años tendras " + (edad + 10) + " años y tu DNI seguira siendo: " + dni ); 
-
-console.log(nombre)
-console.log(apellido)
-console.log(edad)
-console.log(dni)
-
+if (promedio >= 8) {
+    alert( alumno + "promocionó la materia con un promedio de: " + promedio);
+    else if (promedio >= 6) {
+        alert(alumno + "aprobó la materia con un promedio de: " + promedio);
+    }else {
+        alert(alumno + "Debe recursar. Promedio: " + promedio);
+    }
